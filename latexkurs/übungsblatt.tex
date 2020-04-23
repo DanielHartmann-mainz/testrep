@@ -1,0 +1,156 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fancyheadings}
+\usepackage[ngerman,german]{babel}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[active]{srcltx}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{struktex}
+\usepackage{hyperref}
+\usepackage{german}
+\usepackage{paralist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% EDIT THIS PART %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Fach}{Technische Informatik}
+\newcommand{\Name}{Jan Lehmann, Daniel Hartmann}
+\newcommand{\Seminargruppe}{2}
+\newcommand{\Matrikelnummer}{1337}
+\newcommand{\Semester}{SS 2020}
+\newcommand{\Uebungsblatt}{1} %  <-- UPDATE ME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0em}
+\topmargin -1.0cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\setlength{\textheight}{9.2in}
+\setlength{\textwidth}{6.0in}
+
+%%%%%%%%%%%%%%%
+%% Aufgaben-COMMAND
+\newcommand{\Aufgabe}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Aufgabe #1}}
+  \vspace*{0.2cm}
+  
+  }
+}
+%%%%%%%%%%%%%%
+\hypersetup{
+    pdftitle={\Fach{}: Übungsblatt \Uebungsblatt{}},
+    pdfauthor={\Name},
+    pdfborder={0 0 0}
+}
+
+\lstset{ %
+language=java,
+basicstyle=\footnotesize\tt,
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+extendedchars=true,
+showstringspaces=false,
+flexiblecolumns=true,
+}
+
+\title{Übungsblatt \Uebungsblatt{}}
+\author{\Name{}}
+
+\begin{document}
+\thispagestyle{fancy}
+\lhead{\sf \large \Fach{} \\ \small \Name{} %- \Matrikelnummer{}%
+}
+\rhead{\sf \Semester{} \\  }%Übungsgruppe \Seminargruppe{}}
+\vspace*{0.2cm}
+\begin{center}
+\LARGE \sf \textbf{Übungsblatt \Uebungsblatt{}}
+\end{center}
+\vspace*{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insert your solutions here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Aufgabe{1}
+\begin{enumerate}[a)]
+    \item Formeln lassen sich einfach mit zwei \$-Zeichen den Text integrieren: $\frac{a + b}{c} = 1$ . FÃ¼r eine LÃ¤ngere Formel, die in einer eigenen Zeile stehen soll kÃ¶nnen doppelte \$-Zeichen verwendet werden:
+$$ \frac{a + b}{c} = 1 \Rightarrow a + b = c $$
+    \item Nummerierte Formeln bietet die \emph{equation}-Umgebung:
+
+        SpÃ¤ter kann Formel referenziert werden. 
+    \item Mehrzeilige Formeln kÃ¶nnen durch die \emph{align}-Umgebung realisiert werden:
+        \begin{align*}
+            ggT(15, 12) &= ggT(3, 12) \\
+                        &= ggT(3, 9) \\
+                        &= ggT(3, 6) \\
+                        &= ggT(3, 3) \\
+                        &= 3
+        \end{align*}
+    Eine sehr umfangreiche Hilfe zu Formeln in \LaTeX{} findet sich in \url{http://de.wikipedia.org/wiki/Hilfe:TeX}.
+\end{enumerate}
+
+\Aufgabe{2}
+Die Beschriftungen orientieren sich an der Vorlesungsfolie.
+\begin{enumerate}[a)]
+\item Es gelten die folgenden Identitäten nah dem Verschmelzungsgesetz:
+	\begin{equation}
+     b = b + b\cdot c \text{ und } c = c + c\cdot b
+            \label{myequation}
+     \end{equation}
+$ \overline{(\overline{a} +\overline{b})}+(\overline{a}\cdot c)
+ \stackrel{\text{De\ Morgan}}{=}
+ (\overline{\overline{a}}\cdot \overline{\overline{b}})+(\overline{a}\cdot c)
+ \stackrel{\text{h)}}{=}
+ (a\cdot b)+(\overline{a}\cdot c)\\
+ \stackrel{\ref{myequation}}{=}
+ a\cdot (b+ (b\cdot c)) + \overline{a}\cdot (c + (c\cdot b))
+  \stackrel{\text{Distributivgesetz}}{=}
+  (a\cdot b)+(a\cdot (b\cdot c)) + (\overline{a}\cdot c)+ (\overline{a}\cdot (c\cdot b))\\
+  \stackrel{\text{Kommutativgesetz}}{=}
+  (a\cdot b)+(a\cdot (b\cdot c)) + (\overline{a}\cdot c)+ (\overline{a}\cdot (b\cdot c))\\
+  \stackrel{\text{Distributivgesetz}}{=}
+  (a\cdot b) + ((a+ \overline{a})\cdot(b\cdot c)) + ( \overline{a}\cdot c)
+  =(a\cdot b) + (1\cdot(b\cdot c)) + ( \overline{a}\cdot c)\\
+  \stackrel{\text{f)}}{=}
+  (a\cdot b) + (b\cdot c) + ( \overline{a}\cdot c)
+  \stackrel{\text{De\ Morgan}}{=}
+  (a\cdot b)+(b \cdot c)+\overline{(a+\overline{c})}\\
+   \stackrel{\text{Kommutativgesetz}}{=}
+   (a\cdot b)+\overline{(a+\overline{c})}+(b \cdot c) $\hfill $\Box$\\
+   
+   
+   
+   
+\item
+Belegt man die Variablen durch \[a=1,\ b=1,\ c=0\] ergibt sich:\\
+ \[\overline{(\overline{a}+b \cdot c)}\cdot \overline{(a\cdot \overline{b} \cdot c )}+ \overline{(\overline{b}+ \overline{c})} =\overline{(\overline{1}+0 \cdot 1)}\cdot \overline{(1\cdot \overline{0} \cdot 1 )}+ \overline{(\overline{0}+ \overline{1})}\]\[=\overline{0+0}\cdot \overline{1 \cdot 1 \cdot 1}+1\cdot 0=1\cdot 0+0=0\neq 1 = 1+ 1\cdot 0 = a+\cdot cb\]
+ Die Ausdrücke sind also i.A. nicht äquivalent.
+
+
+
+
+
+
+
+\end{enumerate}
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
